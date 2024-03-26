@@ -1,0 +1,30 @@
+{
+  "name": "@dougley/jwt-nginx-ext-auth",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "turbopack dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dougley/jwt-nginx-ext-auth.git"
+  },
+  "author": "Remco Jongschaap <hey@dougley.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Dougley/jwt-nginx-ext-auth/issues"
+  },
+  "homepage": "https://github.com/Dougley/jwt-nginx-ext-auth#readme",
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "prettier": "^3.2.5",
+    "turbopack": "^0.0.1",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "fastify": "^4.26.2",
+    "jose": "^5.2.3"
+  }
+}
