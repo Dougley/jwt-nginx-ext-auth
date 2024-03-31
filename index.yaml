@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  jwt-nginx-ext-auth:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2024-03-31T23:38:13.449708663Z"
+    description: Simple auth server that validates JWK tokens
+    digest: da2fa91c84b4c160722e819b9dcbe27c8b0fe2dff9a4c525bc4d9ace96fe75d9
+    name: jwt-nginx-ext-auth
+    type: application
+    urls:
+    - https://github.com/Dougley/jwt-nginx-ext-auth/releases/download/jwt-nginx-ext-auth-0.0.1/jwt-nginx-ext-auth-0.0.1.tgz
+    version: 0.0.1
+generated: "2024-03-31T23:38:13.449718011Z"
