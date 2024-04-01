@@ -33,8 +33,8 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           env:
-            - name: OIDC_DISCOVERY_URL
-              value: {{ .Values.oidcConfig.discoveryUrl }}
+            - name: OIDC_DISCOVERY_URI
+              value: {{ .Values.oidcConfig.discoveryUri }}
             - name: JWKS_URI
               value: {{ .Values.oidcConfig.jwksUri }}
             - name: JWT_ISSUER
