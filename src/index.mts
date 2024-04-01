@@ -12,6 +12,8 @@ if (process.env.OIDC_DISCOVERY_URI) {
     jwks_uri: string;
     issuer: string;
   };
+  console.log("Discovered JWKS_URI", discoveryJson.jwks_uri);
+  console.log("Discovered issuer", discoveryJson.issuer);
   process.env.JWKS_URI = discoveryJson.jwks_uri;
   process.env.JWT_ISSUER = discoveryJson.issuer;
 }
@@ -31,7 +33,7 @@ fastify.get<{
     authorization: string;
   };
 }>("/", async (request, reply) => {
-  const header = process.env.JWT_HEADER ?? "authorization";
+  const header = (process.env.JWT_HEADER ?? "authorization").toLowerCase();
   if (!request.headers[header]) {
     reply.status(401).send({ error: "Unauthorized" });
     return;

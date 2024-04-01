@@ -14,6 +14,13 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+oidcConfig:
+  discoveryUri: ""
+  jwksUri: ""
+  jwtIssuer: ""
+  jwtAudience: ""
+  jwtHeader: "authorization"
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true

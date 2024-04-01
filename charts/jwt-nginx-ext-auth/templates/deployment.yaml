@@ -32,6 +32,19 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
+          env:
+            - name: OIDC_DISCOVERY_URL
+              value: {{ .Values.oidcConfig.discoveryUrl }}
+            - name: JWKS_URI
+              value: {{ .Values.oidcConfig.jwksUri }}
+            - name: JWT_ISSUER
+              value: {{ .Values.oidcConfig.jwtIssuer }}
+            - name: JWT_AUDIENCE
+              value: {{ .Values.oidcConfig.jwtAudience }}
+            - name: JWT_HEADER
+              value: {{ .Values.oidcConfig.jwtHeader }}
+            - name: PORT
+              value: "{{ .Values.service.port }}"
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
@@ -40,14 +53,6 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}
