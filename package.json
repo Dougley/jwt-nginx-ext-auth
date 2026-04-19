@@ -22,7 +22,7 @@
     "@types/node": "^20.11.30",
     "prettier": "^3.2.5",
     "turbopack": "^0.0.1",
-    "typescript": "^5.4.3"
+    "typescript": "^6.0.0"
   },
   "dependencies": {
     "fastify": "^4.26.2",
